@@ -15,7 +15,8 @@ $bs->Write('SomeText10', 10);
 // We could also just read directly from $bs
 $readbs = ByteStream::fromByteStream($bs);
 $len = $readbs->ReadByte(); // 10
-$text = $readbs->Read($len); // 'SomeText10'```
+$text = $readbs->Read($len); // 'SomeText10'
+```
 
 Ignoring data, seeding with raw data, getting raw data from ByteStream
 ```php
@@ -25,7 +26,8 @@ $bs->WriteShort(2222);
 
 $readbs = new ByteStream($bs->getData(), $bs->getBytesUsed());
 $readbs->ignoreBytes(6); // Ignore 'HEADER'
-$num = $readbs->ReadShort(); // 2222```
+$num = $readbs->ReadShort(); // 2222
+```
 
 ## Functions
 * `getBytesUsed()`
